@@ -1,0 +1,46 @@
+import React, { useState } from 'react';
+
+// Componente de Mensagem individual
+const Mensagem = ({ texto }) => {
+  return <li>{texto}</li>;
+};
+
+// Componente de Loteamento de Mensagens
+const LoteamentoMensagens = ({ mensagens }) => {
+  return (
+    <ul>
+      {mensagens.map((mensagem, index) => (
+        <Mensagem key={index} texto={mensagem} />
+      ))}
+    </ul>
+  );
+};
+
+// Componente principal que utiliza props e hooks
+const App = () => {
+  const [novaMensagem, setNovaMensagem] = useState('');
+  const [mensagens, setMensagens] = useState([]);
+
+  const adicionarMensagem = () => {
+    if (novaMensagem.trim() !== '') {
+      setMensagens([...mensagens, novaMensagem]);
+      setNovaMensagem('');
+    }
+  };
+
+  return (
+    <div>
+      <h1>Chat App</h1>
+      <input
+        type="text"
+        value={novaMensagem}
+        onChange={(e) => setNovaMensagem(e.target.value)}
+        placeholder="Digite sua mensagem"
+      />
+      <button onClick={adicionarMensagem}>Enviar</button>
+      <LoteamentoMensagens mensagens={mensagens} />
+    </div>
+  );
+};
+
+export default App;
