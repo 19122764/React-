@@ -1,0 +1,26 @@
+import React from 'react';
+
+// Componente funcional que recebe props
+const Saudacao = (props) => {
+  // Desestruturação para obter a propriedade 'duarte' do objeto props
+  const { Duarte } = props;
+
+  return (
+    <div>
+      <h1>Olá, {Duarte}!</h1>
+      <p>Bem-vindo ao meu componente React com props.</p>
+    </div>
+  );
+};
+
+// Componente pai que renderiza o componente Saudacao com uma prop 'duarte'
+const App = () => {
+  return (
+    <div>
+      {/* Passando a prop 'nome' para o componente Saudacao */}
+      <Saudacao nome="Usuário" />
+    </div>
+  );
+};
+
+export default App;
