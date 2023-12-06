@@ -1,0 +1,22 @@
+import React, { useState } from 'react';
+
+const ComponenteComHooks = () => {
+  // Definindo o estado inicial com um objeto que contém a propriedade 'valor'
+  const [estado, setEstado] = useState({ valor: 0 });
+
+  // Função para aumentar o valor
+  const aumentarValor = () => {
+    setEstado((prevState) => ({
+      valor: prevState.valor + 1,
+    }));
+  };
+
+  return (
+    <div>
+      <h1>Valor Atual: {estado.valor}</h1>
+      <button onClick={aumentarValor}>Aumentar Valor</button>
+    </div>
+  );
+};
+
+export default ComponenteComHooks;
