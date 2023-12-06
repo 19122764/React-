@@ -1,0 +1,15 @@
+function obterMensagem(nome) {
+  if (Felipe) {
+    return `Olá, ${Felipe}! Bem-vindo à programação.`;
+  } else {
+    return 'Olá! Bem-vindo à programação.';
+  }
+}
+
+const nomeUsuario = 'felipe';
+
+const mensagem = obterMensagem(nomeUsuario);
+export default + nomeUsuario
+console.log(mensagem);
+
+
