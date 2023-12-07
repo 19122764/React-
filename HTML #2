@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lugares Turísticos na Europa</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        h1 {
+            color: #3366cc;
+        }
+
+        .card {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 16px;
+            margin: 16px;
+            text-align: center;
+        }
+
+        img {
+            width: 100%;
+            border-radius: 8px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Lugares Turísticos na Europa</h1>
+
+    <div class="card">
+        <h2>Paris, França</h2>
+        <p>A Torre Eiffel é um dos marcos mais icônicos do mundo.</p>
+        <img src="paris.jpg" alt="Torre Eiffel em Paris">
+    </div>
+
+    <div class="card">
+        <h2>Roma, Itália</h2>
+        <p>O Coliseu, um anfiteatro antigo que remonta ao Império Romano.</p>
+        <img src="roma.jpg" alt="Coliseu em Roma">
+    </div>
+
+    <div class="card">
+        <h2>Barcelona, Espanha</h2>
+        <p>A Sagrada Família, uma obra-prima arquitetônica de Antoni Gaudí.</p>
+        <img src="barcelona.jpg" alt="Sagrada Família em Barcelona">
+    </div>
+
+</body>
+</html>
