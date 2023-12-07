@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pontos Turísticos em [Nome da Cidade]</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        header {
+            background-color: #3366cc;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            font-size: 24px;
+        }
+
+        .point-of-interest {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 16px;
+            margin: 16px;
+        }
+
+        img {
+            width: 100%;
+            border-radius: 8px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Pontos Turísticos em [Nome da Cidade]</h1>
+    </header>
+
+    <div class="point-of-interest">
+        <h2>Praça Central</h2>
+        <p>A movimentada Praça Central, ponto de encontro e eventos culturais.</p>
+        <img src="praca-central.jpg" alt="Praça Central">
+    </div>
+
+    <div class="point-of-interest">
+        <h2>Monumento Histórico</h2>
+        <p>Um monumento histórico que conta a rica história da cidade.</p>
+        <img src="monumento-historico.jpg" alt="Monumento Histórico">
+    </div>
+
+    <div class="point-of-interest">
+        <h2>Parque Natural</h2>
+        <p>O belo Parque Natural, ideal para passeios ao ar livre e contato com a natureza.</p>
+        <img src="parque-natural.jpg" alt="Parque Natural">
+    </div>
+
+</body>
+</html>
