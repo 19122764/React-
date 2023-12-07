@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lugares na França</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        header {
+            background-color: #3366cc;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            font-size: 24px;
+        }
+
+        .place-description {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 16px;
+            margin: 16px;
+        }
+
+        img {
+            width: 100%;
+            border-radius: 8px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Lugares na França</h1>
+    </header>
+
+    <div class="place-description">
+        <h2>Paris - Torre Eiffel</h2>
+        <p>A majestosa Torre Eiffel, ícone mundial e símbolo da cidade luz.</p>
+        <img src="torre-eiffel.jpg" alt="Torre Eiffel">
+    </div>
+
+    <div class="place-description">
+        <h2>Provence - Campos de Lavanda</h2>
+        <p>Os deslumbrantes campos de lavanda que pintam a região de Provence com cores vibrantes.</p>
+        <img src="campos-lavanda.jpg" alt="Campos de Lavanda">
+    </div>
+
+    <div class="place-description">
+        <h2>Monte Saint-Michel</h2>
+        <p>O fascinante Mont Saint-Michel, uma ilhota rochosa com uma abadia medieval.</p>
+        <img src="mont-saint-michel.jpg" alt="Monte Saint-Michel">
+    </div>
+
+</body>
+</html>
