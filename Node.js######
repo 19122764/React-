@@ -1,0 +1,30 @@
+const express = require('express');
+const app = express();
+const port = 8080;
+
+// Rota para requisições GET
+app.get('/', (req, res) => {
+    res.send('Resposta para requisição GET na rota /');
+});
+
+// Rota para requisições POST
+app.post('/api/data', (req, res) => {
+    res.send('Resposta para requisição POST na rota /api/data');
+});
+
+// Rota para requisições PUT
+app.put('/update/:id', (req, res) => {
+    const itemId = req.params.id;
+    res.send(`Resposta para requisição PUT na rota /update/${itemId}`);
+});
+
+// Rota para requisições DELETE
+app.delete('/remove/:id', (req, res) => {
+    const itemId = req.params.id;
+    res.send(`Resposta para requisição DELETE na rota /remove/${itemId}`);
+});
+
+// Iniciar o servidor
+app.listen(port, () => {
+    console.log(`Servidor está rodando em http://localhost:${port}`);
+});
