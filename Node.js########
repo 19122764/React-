@@ -1,0 +1,33 @@
+const express = require('express');
+const app = express();
+const port = 8080;
+
+// Rota para requisições com status 200 (OK)
+app.get('/ok', (req, res) => {
+    res.status(200).send('Requisição bem-sucedida (Status 200 OK)');
+});
+
+// Rota para requisições com status 201 (Created)
+app.post('/created', (req, res) => {
+    res.status(201).send('Recurso criado com sucesso (Status 201 Created)');
+});
+
+// Rota para requisições com status 400 (Bad Request)
+app.get('/badrequest', (req, res) => {
+    res.status(400).send('Requisição inválida (Status 400 Bad Request)');
+});
+
+// Rota para requisições com status 404 (Not Found)
+app.get('/notfound', (req, res) => {
+    res.status(404).send('Recurso não encontrado (Status 404 Not Found)');
+});
+
+// Rota para requisições com status 500 (Internal Server Error)
+app.get('/error', (req, res) => {
+    res.status(500).send('Erro interno do servidor (Status 500 Internal Server Error)');
+});
+
+// Iniciar o servidor
+app.listen(port, () => {
+    console.log(`Servidor está rodando em http://localhost:${port}`);
+});
