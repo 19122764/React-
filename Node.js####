@@ -1,0 +1,46 @@
+npm install express
+
+const express = require('express');
+const app = express();
+const port = 8080;
+
+// Middleware para logging de requisições
+app.use((req, res, next) => {
+    console.log(`Recebida requisição ${req.method} para ${req.url}`);
+    next();
+});
+
+// Rota padrão
+app.get('/', (req, res) => {
+    res.send('Bem-vindo à página inicial!');
+});
+
+// Rota com parâmetros
+app.get('/produto/:id', (req, res) => {
+    const productId = req.params.id;
+    res.send(`Detalhes do Produto ${productId}`);
+});
+
+// Rota com controle de fluxo
+app.get('/admin', (req, res, next) => {
+    const isAdmin = true; // Simulando controle de autenticação
+    if (isAdmin) {
+        next(); // Passa para o próximo middleware
+    } else {
+        res.status(403).send('Acesso negado. Você não é um administrador.');
+    }
+}, (req, res) => {
+    res.send('Página de Administração');
+});
+
+// Rota para lidar com qualquer outra requisição
+app.all('*', (req, res) => {
+    res.status(404).send('Página não encontrada');
+});
+
+// Iniciar o servidor
+app.listen(port, () => {
+    console.log(`Servidor está rodando em http://localhost:${port}`);
+});
+
+node server.js
