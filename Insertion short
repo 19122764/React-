@@ -1,0 +1,31 @@
+def insertion_sort(arr):
+    for i in range(1, len(arr)):
+        key = arr[i]
+        j = i - 1
+        while j >= 0 and key < arr[j]:
+            arr[j + 1] = arr[j]
+            j -= 1
+        arr[j + 1] = key
+
+def main():
+    # Tamanho do vetor
+    tamanho = 30
+
+    # Geração de números ímpares
+    vetor = [i for i in range(1, tamanho * 2, 2)]
+
+    # Embaralhamento do vetor (opcional)
+    import random
+    random.shuffle(vetor)
+
+    # Exibição do vetor antes da ordenação
+    print("Vetor antes da ordenação:", vetor)
+
+    # Chamada da função para ordenar o vetor
+    insertion_sort(vetor)
+
+    # Exibição do vetor ordenado
+    print("Vetor ordenado:", vetor)
+
+if __name__ == "__main__":
+    main()
