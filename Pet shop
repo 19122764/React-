@@ -1,0 +1,53 @@
+class Animal:
+    def __init__(self, nome, raca, idade, responsavel, telefone_responsavel):
+        self.nome = nome
+        self.raca = raca
+        self.idade = idade
+        self.responsavel = responsavel
+        self.telefone_responsavel = telefone_responsavel
+
+    def exibir_info(self):
+        print(f"Nome: {self.nome}")
+        print(f"Raça: {self.raca}")
+        print(f"Idade: {self.idade} anos")
+        print(f"Responsável: {self.responsavel}")
+        print(f"Telefone do Responsável: {self.telefone_responsavel}")
+        print()
+
+def cadastrar_animal():
+    nome = input("Nome do animal: ")
+    raca = input("Raça do animal: ")
+    idade = int(input("Idade do animal: "))
+    responsavel = input("Nome do responsável: ")
+    telefone_responsavel = input("Telefone do responsável: ")
+
+    return Animal(nome, raca, idade, responsavel, telefone_responsavel)
+
+def main():
+    pet_shop = []
+
+    while True:
+        print("1. Cadastrar animal")
+        print("2. Listar animais")
+        print("3. Sair")
+
+        escolha = input("Escolha uma opção: ")
+
+        if escolha == "1":
+            novo_animal = cadastrar_animal()
+            pet_shop.append(novo_animal)
+            print("Animal cadastrado com sucesso!")
+        elif escolha == "2":
+            if not pet_shop:
+                print("Nenhum animal cadastrado.")
+            else:
+                for animal in pet_shop:
+                    animal.exibir_info()
+        elif escolha == "3":
+            print("Saindo do programa.")
+            break
+        else:
+            print("Opção inválida. Tente novamente.")
+
+if __name__ == "__main__":
+    main()
