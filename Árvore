@@ -1,0 +1,38 @@
+from binarytree import build, Node
+
+# Função para remover nó com dois filhos
+def remove_node_with_two_children(tree, value):
+    node = tree.search(value)
+    if node is not None and node.left is not None and node.right is not None:
+        min_node = node.right.find_min()
+        node.value = min_node.value
+        node.right = remove_node(node.right, min_node.value)
+    else:
+        print(f"O valor {value} não possui dois filhos ou não está na árvore.")
+
+# Função para remover um nó
+def remove_node(tree, value):
+    return tree.delete(value)
+
+# Lista 1
+lista1 = [45, 20, 30, 60, 81, 97, 100, 7, 8, 4]
+tree1 = build(lista1)
+
+# Lista 2
+lista2 = [15, 6, 18, 3, 7, 16, 20, 4]
+tree2 = build(lista2)
+
+# Adicionando valor à árvore
+value_to_add = 25
+tree1.insert(value_to_add)
+
+# Removendo nó com dois filhos
+value_to_remove = 20
+remove_node_with_two_children(tree1, value_to_remove)
+
+# Visualizando árvores
+print("Árvore 1 após adição e remoção:")
+print(tree1)
+
+print("\nÁrvore 2:")
+print(tree2)
