@@ -1,0 +1,34 @@
+import networkx as nx
+import matplotlib.pyplot as plt
+
+# Criando um grafo não direcionado simples
+grafo_nao_direcionado = nx.Graph()
+
+# Adicionando arestas
+arestas = [(1, 2), (2, 3), (3, 1), (3, 4)]
+grafo_nao_direcionado.add_edges_from(arestas)
+
+# Visualizando o grafo
+nx.draw(grafo_nao_direcionado, with_labels=True, font_weight='bold')
+plt.show()
+
+
+
+
+
+import networkx as nx
+import matplotlib.pyplot as plt
+
+# Criando um grafo direcionado com peso nas arestas
+grafo_direcionado = nx.DiGraph()
+
+# Adicionando arestas com peso
+arestas_peso = [(1, 2, 3), (2, 3, 5), (3, 1, 2), (3, 4, 1)]
+grafo_direcionado.add_weighted_edges_from(arestas_peso)
+
+# Visualizando o grafo direcionado
+pos = nx.spring_layout(grafo_direcionado)
+nx.draw(grafo_direcionado, pos, with_labels=True, font_weight='bold', node_size=700, node_color='skyblue', font_size=8)
+labels = nx.get_edge_attributes(grafo_direcionado, 'weight')
+nx.draw_networkx_edge_labels(grafo_direcionado, pos, edge_labels=labels)
+plt.show()
